@@ -27,29 +27,29 @@ def buscar_solucion_BFS(conexiones, estado_inicial,solucion):
 
             nodo.set_hijos(lista_hijos)
 
-            if __name__ == "__main__":
-                conexiones = {
-                    'Malaga':{'Salamanca', 'Madrid','Barcelona'},
-                    'Sevilla':{'Santiago','Madrid'},
-                    'Granada':{'Valencia'},
-                    'Valencia':{'Barcelona'},
-                    'Madrid':{'Salamanca','Sevilla','Malaga','Barcelona','Santander'},
-                    'Salamanca':{'Malaga','Madrid'},
-                    'Santiago':{'Sevilla','Santander','Barcelona'},
-                    'Santander':{'Santiago','Madrid'},
-                    'Zaragoza':{'Barcelona'},
-                    'Barcelona':{'Zaragoza','Santiago','Madrid','Malaga','Valencia'}
-                }
+if __name__ == "__main__":
+    conexiones = {
+        'Malaga':{'Salamanca', 'Madrid','Barcelona'},
+        'Sevilla':{'Santiago','Madrid'},
+        'Granada':{'Valencia'},
+        'Valencia':{'Barcelona'},
+        'Madrid':{'Salamanca','Sevilla','Malaga','Barcelona','Santander'},
+        'Salamanca':{'Malaga','Madrid'},
+        'Santiago':{'Sevilla','Santander','Barcelona'},
+        'Santander':{'Santiago','Madrid'},
+        'Zaragoza':{'Barcelona'},
+        'Barcelona':{'Zaragoza','Santiago','Madrid','Malaga','Valencia'}
+    }
 
-                estado_inicial = 'Malaga'
-                solucion = 'Santiago'
-                nodo_solucion = buscar_solucion_BFS(conexiones,estado_inicial,solucion)
-                #mostrar resultado
-                resultado = []
-                nodo = nodo_solucion
-                while nodo.get_padre() != None:
-                    resultado.append(nodo.get_datos())
-                    nodo = nodo.get_padre()
-                resultado.append(estado_inicial)
-                resultado.reverse()
-                print (resultado)
+    estado_inicial = 'Malaga'
+    solucion = 'Santiago'
+    nodo_solucion = buscar_solucion_BFS(conexiones,estado_inicial,solucion)
+    #mostrar resultado
+    resultado = []
+    nodo = nodo_solucion
+    while nodo.get_padre() != None:
+        resultado.append(nodo.get_datos())
+        nodo = nodo.get_padre()
+    resultado.append(estado_inicial)
+    resultado.reverse()
+    print (resultado)
